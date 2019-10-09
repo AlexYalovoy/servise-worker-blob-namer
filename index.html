@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head> </head>
-
+  <style>
+    .block {
+      margin-bottom: 10px;
+    }
+  </style>
   <body>
-    <input type="text" id="name" />
-    <input type="file" id="inp" accept="application/pdf" />
-    <iframe id="iframe"></iframe>
-    <button id="set-unnamed-src-button">Set src to</button>
-    <button id="set-named-src-button">
-      Set src to
-    </button>
-    <script src="/index.js"></script>
+    <div class="block">
+      <div><label for="name">File name</label></div>
+      <div><input type="text" id="name" /></div>
+    </div>
+    <div class="block">
+      <input type="file" id="inp" accept="application/pdf" />
+    </div>
+    <div class="block"><iframe id="iframe"></iframe></div>
+    <div class="block">
+      <button id="set-unnamed-src-button">Set src to</button>
+    </div>
+    <div class="block">
+      <button id="set-named-src-button">
+        Set src to
+      </button>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

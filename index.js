@@ -20,20 +20,21 @@ if (navigator.serviceWorker) {
   navigator.serviceWorker.register("sw.js").catch(console.error);
 }
 
-name.onchange = e => {
-  setNamedButton.innerText = `Set src to ${fetchBase64}/${e.target.value}`;
+name.oninput = e => {
+  setNamedButton.innerText = `Set src to ${fetchPattern}/${name.value}`;
 };
 
 fileInput.onchange = e => {
   console.log("chosen file", e.target.files[0]);
   pdfFile = e.target.files[0];
   objectURL = URL.createObjectURL(pdfFile);
+  console.log("objectURL", objectURL);
   setUnnamedButton.innerText = `Set src to ${objectURL}`;
 };
 
 setUnnamedButton.onclick = () => {
-  iframe.src = objectUrl;
-  console.log("src setted to ", objectUrl);
+  iframe.src = objectURL;
+  console.log("src setted to ", objectURL);
 };
 
 setNamedButton.onclick = () => {
